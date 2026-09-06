@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Buku - SIMPUS-Mini</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SIMPUS-Mini</h1>
+
+        <!-- Hamburger Checkbox Hack -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html">Daftar Buku</a></li>
+                <li><a href="tambah.html">Tambah Buku</a></li>
+                <li><a href="../anggota/list.html">Daftar Anggota</a></li>
+                <li><a href="../anggota/tambah.html">Tambah Anggota</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Daftar Buku</h2>
+            <!-- Pembungkus Tabel Responsif -->
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Judul</th>
+                            <th>Pengarang</th>
+                            <th>Tahun</th>
+                            <th>Stok</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Laskar Pelangi</td>
+                            <td>Andrea Hirata</td>
+                            <td>2005</td>
+                            <td>4</td>
+                            <td>
+                                <button type="button" class="btn-warning">Edit</button>
+                                <button type="button" class="btn-danger">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bumi Manusia</td>
+                            <td>Pramoedya Ananta Toer</td>
+                            <td>1980</td>
+                            <td>2</td>
+                            <td>
+                                <button type="button" class="btn-warning">Edit</button>
+                                <button type="button" class="btn-danger">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atomic Habits</td>
+                            <td>James Clear</td>
+                            <td>2018</td>
+                            <td>5</td>
+                            <td>
+                                <button type="button" class="btn-warning">Edit</button>
+                                <button type="button" class="btn-danger">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Dokumentasi Format JSON Buku</h2>
+            <pre><code>[{"judul": "Laskar Pelangi", "pengarang": "Andrea Hirata",
+                "tahun": 2005, "stok": 4}, {"judul": "Bumi Manusia", "pengarang":
+                "Pramoedya Ananta Toer", "tahun": 1980, "stok": 2}]</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SIMPUS-Mini — Jobsheet 3</p>
+    </footer>
+
+</body>
+</html>

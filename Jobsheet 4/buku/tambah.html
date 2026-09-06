@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Buku - SIMPUS-Mini</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SIMPUS-Mini</h1>
+
+        <!-- Hamburger Checkbox Hack -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html">Daftar Buku</a></li>
+                <li><a href="tambah.html">Tambah Buku</a></li>
+                <li><a href="../anggota/list.html">Daftar Anggota</a></li>
+                <li><a href="../anggota/tambah.html">Tambah Anggota</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tambah Buku Baru</h2>
+            <form>
+                <p>
+                    <label for="judul">Judul Buku</label>
+                    <input type="text" id="judul" name="judul" required>
+                </p>
+                <p>
+                    <label for="pengarang">Pengarang</label>
+                    <input type="text" id="pengarang" name="pengarang" required>
+                </p>
+                <p>
+                    <label for="tahun">Tahun Terbit</label>
+                    <input type="number" id="tahun" name="tahun" min="1900" max="2099">
+                </p>
+                <p>
+                    <label for="stok">Jumlah Stok</label>
+                    <input type="number" id="stok" name="stok" min="1" value="1">
+                </p>
+                <p>
+                    <button type="submit">Simpan</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SIMPUS-Mini — Jobsheet 3</p>
+    </footer>
+
+</body>
+</html>
