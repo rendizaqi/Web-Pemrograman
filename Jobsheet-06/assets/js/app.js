@@ -15,6 +15,9 @@ function initNavToggle() {
 // tombol .btn-hapus belum tentu ada saat DOMContentLoaded.
 function initHapusConfirm() {
     document.addEventListener("click", function (e) {
+        // Cetak elemen yang persis diklik oleh mouse ke console browser
+        console.log("Elemen yang diklik:", e.target);
+
         const btn = e.target.closest(".btn-hapus");
         if (!btn) return;
 
@@ -108,6 +111,42 @@ function initValidasiForm() {
             e.preventDefault();
         }
     });
+}
+
+async function muatDataTabel(url, daftarKolom) {
+    const tbody = document.querySelector(".table-responsive table tbody");
+    const loading = document.getElementById("loading-indicator");
+    if (!tbody) return;
+
+    if (loading) loading.style.display = "block";
+    tbody.innerHTML = "";
+
+    try {
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
+        const res = await fetch(url);
+        if (!res.ok) {
+            throw new Error("Gagal mengambil data (status " + res.status + ")");
+        }
+        const dataList = await res.json();
+
+        dataList.forEach(function (item) {
+            const tr = document.createElement("tr");
+            let htmlInner = "";
+
+            daftarKolom.forEach(function (kolom) {
+                htmlInner += "<td>" + item[kolom] + "</td>";
+            });
+
+            htmlInner += "<td><button type=\"button\">Edit</button> <button type=\"button\" class=\"btn-hapus\">Hapus</button></td>";
+            tr.innerHTML = htmlInner;
+            tbody.appendChild(tr);
+        });
+    } catch (err) {
+        tbody.innerHTML = "<tr><td colspan=\"" + (daftarKolom.length + 1) + "\">Gagal memuat data: " + err.message + "</td></tr>";
+    } finally {
+        if (loading) loading.style.display = "none";
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
