@@ -177,12 +177,22 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ---- Tabel Responsif ---- */
-.table-responsive {
+/* ===== Tabel Responsif & Kode Panjang (Latihan 3) ===== */
+.table-responsive,
+pre {
     overflow-x: auto;
 }
 
+pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9rem;
+}
 
+/* ===== Hamburger Menu ===== */
 .nav-toggle {
     display: none;
 }
@@ -194,14 +204,20 @@ footer {
     cursor: pointer;
 }
 
-/* tablet */
-@media (max-width: 768px) {
+/*  ===== Media Queries & Breakpoints ===== */
+
+@media (min-width: 1400px) {
+    main {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 900px) {
     main section:nth-of-type(2) {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* hp */
 @media (max-width: 480px) {
     header {
         position: relative;
