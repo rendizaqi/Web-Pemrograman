@@ -3,7 +3,7 @@ $host = '127.0.0.1';
 $port = '5432';
 $db   = 'simpus_mini';
 $user = 'postgres';
-$pass = '21032007';
+$pass = 'postgres';
 
 $dsn = "pgsql:host=$host;port=$port;dbname=$db";
 
